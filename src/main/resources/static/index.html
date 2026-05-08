@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Digital Wallet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Digital Wallet Portal</h1>
+        <p>Simple, human-touch banking.</p>
+    </header>
+
+    <div class="dashboard">
+        <div class="card">
+            <h2>Open Account</h2>
+            <form id="createAccountForm">
+                <input type="text" id="accountName" placeholder="Full Name" required>
+                <input type="number" id="initialDeposit" placeholder="Initial Deposit ($)" required min="0" step="0.01">
+                <button type="submit">Create Account</button>
+            </form>
+            <div id="createResult" class="result"></div>
+        </div>
+
+        <div class="card">
+            <h2>Account Details</h2>
+            <form id="checkBalanceForm">
+                <input type="number" id="accountId" placeholder="Account ID" required min="1">
+                <button type="submit">Check Balance</button>
+            </form>
+            <div id="balanceResult" class="result"></div>
+        </div>
+
+        <div class="card">
+            <h2>Transfer Funds</h2>
+            <form id="transferForm">
+                <input type="number" id="fromId" placeholder="From Account ID" required min="1">
+                <input type="number" id="toId" placeholder="To Account ID" required min="1">
+                <input type="number" id="transferAmount" placeholder="Amount ($)" required min="0.01" step="0.01">
+                <button type="submit">Send Money</button>
+            </form>
+            <div id="transferResult" class="result"></div>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
